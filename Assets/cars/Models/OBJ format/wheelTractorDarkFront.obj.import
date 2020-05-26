@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wheelTractorDarkFront.obj-338abea4e0fbda51ad2b6d754e84d53f.mesh"
+
+[deps]
+
+files=[ "res://.import/wheelTractorDarkFront.obj-338abea4e0fbda51ad2b6d754e84d53f.mesh" ]
+
+source_file="res://Assets/cars/Models/OBJ format/wheelTractorDarkFront.obj"
+dest_files=[ "res://.import/wheelTractorDarkFront.obj-338abea4e0fbda51ad2b6d754e84d53f.mesh", "res://.import/wheelTractorDarkFront.obj-338abea4e0fbda51ad2b6d754e84d53f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

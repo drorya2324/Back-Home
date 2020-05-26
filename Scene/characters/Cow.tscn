@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/characters/Armatures/CowArmature.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/characters/Animations/CowAnimations.tscn" type="PackedScene" id=2]
+
+[node name="Cow" type="Spatial"]
+
+[node name="Armature" parent="." instance=ExtResource( 1 )]
+transform = Transform( 100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0 )
+
+[node name="AnimationPlayer" parent="." instance=ExtResource( 2 )]

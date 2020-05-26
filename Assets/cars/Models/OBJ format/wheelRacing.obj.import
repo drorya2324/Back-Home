@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wheelRacing.obj-9c2357ef653228e949b7a9ee1ca65902.mesh"
+
+[deps]
+
+files=[ "res://.import/wheelRacing.obj-9c2357ef653228e949b7a9ee1ca65902.mesh" ]
+
+source_file="res://Assets/cars/Models/OBJ format/wheelRacing.obj"
+dest_files=[ "res://.import/wheelRacing.obj-9c2357ef653228e949b7a9ee1ca65902.mesh", "res://.import/wheelRacing.obj-9c2357ef653228e949b7a9ee1ca65902.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
