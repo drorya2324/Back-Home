@@ -388,6 +388,8 @@ material/0 = null
 material/1 = null
 
 [node name="StaticBody" type="StaticBody" parent="Horse"]
+collision_layer = 2
+collision_mask = 13
 
 [node name="CollisionShape" type="CollisionShape" parent="Horse/StaticBody"]
 shape = SubResource( 3 )

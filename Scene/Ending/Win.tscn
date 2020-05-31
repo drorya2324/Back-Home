@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scene/Ending/Lose.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Win.gd" type="Script" id=3]
+[ext_resource path="res://Scene/characters/actual_characters_folder/AHorse.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/PickUps/Home.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/characters/actual_characters_folder/ALlama.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/characters/actual_characters_folder/APig.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/characters/actual_characters_folder/ASheep.tscn" type="PackedScene" id=8]
+
+[node name="Win" groups=[
+"Winning",
+"winning",
+] instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="ColorRect" parent="." index="0"]
+color = Color( 0.223529, 0.839216, 0.921569, 0.898039 )
+
+[node name="VBoxContainer" parent="CenterContainer" index="0"]
+margin_left = 211.0
+margin_top = 134.0
+margin_right = 813.0
+margin_bottom = 466.0
+
+[node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
+margin_right = 602.0
+text = "You Are Victorious!"
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer" index="1"]
+margin_top = 57.0
+margin_right = 602.0
+margin_bottom = 110.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.105882, 0.133333, 0.835294, 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="CenterContainer" parent="CenterContainer/VBoxContainer" index="2"]
+margin_top = 114.0
+margin_right = 602.0
+margin_bottom = 332.0
+
+[node name="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer" index="0"]
+margin_left = 196.0
+margin_right = 405.0
+
+[node name="ViewportContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer" index="0"]
+margin_right = 209.0
+
+[node name="AnimationPlayer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport/ACow" index="5"]
+autoplay = "Armature|Jump"
+
+[node name="Halo" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport/ACow" index="6"]
+transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -0.648, 0, 1.5, -2.8325e-08, -0.0200043, -2.75256, 4.35496 )
+
+[node name="ASheep" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport" index="1" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33351, 0, 0 )
+
+[node name="Home" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport" index="2" instance=ExtResource( 5 )]
+transform = Transform( -0.0898155, 0, 0.995958, 0, 1, 0, -0.995958, 0, -0.0898155, -2.43733, 0, 8.67111 )
+
+[node name="AHorse" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport" index="3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2778, 0, 0 )
+
+[node name="APig" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport" index="4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.90894, 0, 0 )
+
+[node name="ALlama" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport" index="5" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2948, 0, 0 )
+
+[node name="Camera" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport" index="6"]
+transform = Transform( 0.99944, 0.0201614, 0.0267149, -0.0242006, 0.986702, 0.160725, -0.0231192, -0.161282, 0.986638, 4.101, 8.029, 11.998 )
+
+[node name="GridContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer" index="1"]
+margin_right = 209.0
+
+[node name="Label" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer" index="1"]
+margin_right = 209.0
+text = "Play Again"
+
+[node name="Label2" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer" index="3"]
+margin_right = 209.0
+
+[editable path="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport/ACow"]
