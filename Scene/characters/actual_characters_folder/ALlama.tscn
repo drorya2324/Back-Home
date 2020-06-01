@@ -8,9 +8,6 @@
 "animals",
 ] instance=ExtResource( 1 )]
 
-[node name="MovementTimer" parent="." index="0"]
-wait_time = 2.0
-
 [node name="Armature" parent="." index="4" instance=ExtResource( 2 )]
 transform = Transform( 100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0 )
 

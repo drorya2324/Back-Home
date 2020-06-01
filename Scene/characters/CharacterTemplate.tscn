@@ -19,7 +19,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="MovementTimer" type="Timer" parent="."]
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 2.5, 0, 3.415, 0 )
@@ -33,4 +35,4 @@ shape = SubResource( 3 )
 
 [node name="NextPosition" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
-[connection signal="timeout" from="MovementTimer" to="." method="_on_MovementTimer_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

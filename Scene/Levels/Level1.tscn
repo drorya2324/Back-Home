@@ -11,6 +11,9 @@
 
 [node name="Level1" instance=ExtResource( 1 )]
 
+[node name="DirectionalLight" parent="." index="0"]
+transform = Transform( -0.606156, 0.620882, -0.497072, 0.38325, 0.775647, 0.501489, 0.696918, 0.113477, -0.708116, -35.8693, 88.5655, -46.0435 )
+
 [node name="CameraBody" parent="." index="1" groups=[
 "moving",
 ]]
@@ -28,7 +31,16 @@ transform = Transform( -3.25841e-07, 0, -1.6, 0, 2.04, 0, 2, 0, -2.60673e-07, 13
 transform = Transform( -3.25841e-07, 0, -1.6, 0, 2.04, 0, 2, 0, -2.60673e-07, 13, -0.075, 115 )
 
 [node name="Road4" parent="Roads" index="3" instance=ExtResource( 3 )]
-transform = Transform( -3.25841e-07, 0, -1.6, 0, 2.04, 0, 2, 0, -2.60673e-07, 13, -0.075, 165 )
+transform = Transform( -3.25841e-07, 0, -1.6, 0, 2.04, 0, 2, 0, -2.60673e-07, 13, -0.075, 177.5 )
+
+[node name="Road5" parent="Roads" index="4" instance=ExtResource( 3 )]
+transform = Transform( -3.25841e-07, 0, -1.6, 0, 2.04, 0, 2, 0, -2.60673e-07, 13, -0.075, 240 )
+
+[node name="Road6" parent="Roads" index="5" instance=ExtResource( 3 )]
+transform = Transform( -3.25841e-07, 0, -1.6, 0, 2.04, 0, 2, 0, -2.60673e-07, 13, -0.075, 302.5 )
+
+[node name="Road7" parent="Roads" index="6" instance=ExtResource( 3 )]
+transform = Transform( -3.25841e-07, 0, -1.6, 0, 2.04, 0, 2, 0, -2.60673e-07, 13, -0.075, 377.5 )
 
 [node name="VehicleBody" parent="Cars" index="0" instance=ExtResource( 2 )]
 transform = Transform( -5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 35, 0, 15 )
@@ -40,8 +52,17 @@ transform = Transform( -5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 35, 0, 
 [node name="VehicleBody3" parent="Cars" index="2" instance=ExtResource( 4 )]
 transform = Transform( -5, 0, -1.94707e-06, 0, 5, 0, 1.94707e-06, 0, -5, 35, 0, 115 )
 
-[node name="VehicleBody4" parent="Cars" index="3" instance=ExtResource( 8 )]
-transform = Transform( -5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 35, 0, 165 )
+[node name="VehicleBody4" parent="Cars" index="3" instance=ExtResource( 4 )]
+transform = Transform( -5, 0, -1.94707e-06, 0, 5, 0, 1.94707e-06, 0, -5, 35, 0, 177.5 )
+
+[node name="VehicleBody5" parent="Cars" index="4" instance=ExtResource( 8 )]
+transform = Transform( -5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 35, 0, 240 )
+
+[node name="VehicleBody6" parent="Cars" index="5" instance=ExtResource( 8 )]
+transform = Transform( -5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 35, 0, 302.5 )
+
+[node name="VehicleBody7" parent="Cars" index="6" instance=ExtResource( 8 )]
+transform = Transform( -5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 35, 0, 377.5 )
 
 [node name="SpawningArea" parent="SpawningAreas" index="0" instance=ExtResource( 5 )]
 transform = Transform( 35.911, 0, 0, 0, 0.096, 0, 0, 0, 10.5, 0.73, 4, 56 )
@@ -49,7 +70,14 @@ transform = Transform( 35.911, 0, 0, 0, 0.096, 0, 0, 0, 10.5, 0.73, 4, 56 )
 [node name="SpawningArea2" parent="SpawningAreas" index="1" instance=ExtResource( 5 )]
 transform = Transform( 35.911, 0, 0, 0, 0.096, 0, 0, 0, 10.5, 0.73, 4, 106 )
 
+[node name="SpawningArea3" parent="SpawningAreas" index="2" instance=ExtResource( 5 )]
+transform = Transform( 35.911, 0, 0, 0, 0.096, 0, 0, 0, 10.5, 0.73, 4, 231 )
+
+[node name="SpawningArea4" parent="SpawningAreas" index="3" instance=ExtResource( 5 )]
+transform = Transform( 35.911, 0, 0, 0, 0.096, 0, 0, 0, 10.5, 0.73, 4, 368.5 )
+
 [node name="Home" parent="Home" index="0" instance=ExtResource( 6 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 18, 0, 205 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 18, 0, 427.5 )
+[connection signal="timeout" from="Characters/ACow/MovementTimer" to="Characters/ACow" method="_on_MovementTimer_timeout"]
 
 [editable path="Characters/ACow"]

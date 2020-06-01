@@ -1,6 +1,7 @@
 extends "res://Scripts/Lose.gd"
 
 func _ready():
+	pause_mode = PAUSE_MODE_PROCESS
 	$CenterContainer/VBoxContainer/ScoreLabel.text = ""
 	update_score()
 
