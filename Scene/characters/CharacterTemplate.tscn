@@ -35,4 +35,17 @@ shape = SubResource( 3 )
 
 [node name="NextPosition" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
+
+[node name="BodyArea" type="Area" parent="."]
+
+[node name="MeshInstance2" type="MeshInstance" parent="BodyArea"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 2.5, 0, 3.415, 0 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape2" type="CollisionShape" parent="BodyArea"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 2.5, 0, 3.415, 0 )
+shape = SubResource( 3 )
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="body_entered" from="BodyArea" to="." method="_on_BodyArea_body_entered"]

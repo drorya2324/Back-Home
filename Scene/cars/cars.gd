@@ -15,12 +15,12 @@ func _physics_process(delta):
 
 func _on_Vehicle_body_entered(body):
 	if body.collision_layer == 2:
-		print("die, ", body)
-		$CollisionShape.disabled = true
-		$Area/CollisionShape2.disabled = true
+		print("I'm ", self, "killing ", body)
+		self.get_node("CollisionShape").disabled = true
+		self.get_node("Area/CollisionShape2").disabled = true
 		get_tree().call_group("animals","die",body)
-		if body == Global.LevelTemplate.second_alive:
-			Global.Character.second_alive_died = true
+	#	if body == Global.LevelTemplate.second_alive:
+	#		Global.Character.second_alive_died = true
 
 
 func _on_Timer_timeout():

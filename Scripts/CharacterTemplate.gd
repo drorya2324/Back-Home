@@ -8,13 +8,12 @@ var crossed = false
 var alive = true
 var can_click = true
 var home = false
-var second_alive_died = false
+#var second_alive_died = false
 #onready var front_alive
 
 
 
 func _ready():
-	pause_mode = Node.PAUSE_MODE_STOP
 	#front_alive = Global.LevelTemplate.Characters_node.get_child(self.get_index()-1).get_child(3).translation.z
 	Global.Character = self
 	animations_settings()
@@ -32,7 +31,8 @@ func move():
 		if Input.is_action_just_pressed("forward"):
 				motion.z = 1
 				can_click = false
-		elif Global.LevelTemplate.children_counter>2:
+		elif Global.children_counter>1:
+			# if one of the middle animals was killed- move the one behind it to the front animal's position node:
 			if self!= Global.LevelTemplate.first_alive and self.translation.z < Global.LevelTemplate.Characters_node.get_child(self.get_index()-1).get_child(3).translation.z:
 				motion.z = 1
 			else:
@@ -71,7 +71,7 @@ func die(body):
 # Being called by Home.gd
 func go_home(body):
 	home = true
-	print("home = true")
+#	print("home = true")
 	if alive:
 		motion.z = 1
 		if body == self:
@@ -86,3 +86,13 @@ func _on_DeathTimer_timeout():
 	Global.CameraBody.animal_killed = true
 	#if second_alive_died:
 	#	move_second_alive()
+
+
+
+
+
+func _on_BodyArea_body_entered(body):
+	if body.collision_layer == 4:
+		self.get_node("CollisionShape").disabled = true
+		self.get_node("BodyArea/CollisionShape2").disabled = true
+		die(self)

@@ -387,9 +387,7 @@ skin = SubResource( 2 )
 material/0 = null
 material/1 = null
 
-[node name="StaticBody" type="StaticBody" parent="Horse"]
-collision_layer = 2
-collision_mask = 13
+[node name="Area" type="Area" parent="Horse"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Horse/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Horse/Area"]
 shape = SubResource( 3 )

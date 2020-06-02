@@ -337,13 +337,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0 )
 [node name="BackFootL_end" type="Spatial" parent="FrontFootR_end/FrontLowLegR_end/BackLowLegR_end/FrontLowLegL_end/BackLowLegL_end/Back_end/Head_end/Torso_end/BackFootR_end/FrontFootL_end"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00674537, 0 )
 
-[node name="Pig" type="MeshInstance" parent="."]
+[node name="Mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 skin = SubResource( 2 )
 material/0 = null
 material/1 = null
 
-[node name="StaticBody" type="StaticBody" parent="Pig"]
+[node name="StaticBody" type="Area" parent="Mesh"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Pig/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Mesh/StaticBody"]
 shape = SubResource( 3 )

@@ -10,7 +10,6 @@ func _on_HomeArea_body_entered(body):
 		get_tree().call_group("animals","go_home",body)
 		get_tree().call_group("moving","go_home")
 		$ScoreTimer.start()
-		get_tree().paused = true
 		
 
 
