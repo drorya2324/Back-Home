@@ -219,7 +219,9 @@ tracks/0/keys = {
 "values": [ Vector3( 36, 0, 155 ), Vector3( -50, 0, 115 ) ]
 }
 
-[node name="VehicleBody" type="KinematicBody"]
+[node name="VehicleBody" type="KinematicBody" groups=[
+"cars",
+]]
 transform = Transform( -5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 36, 0, 0 )
 collision_layer = 4
 collision_mask = 3

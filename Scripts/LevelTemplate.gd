@@ -15,7 +15,10 @@ var second_alive
 var last_alive
 
 
+
 func _ready():
+	BackgroundMusic.pitch_scale =1
+	$WorldEnvironment.environment = load("res://default_env.tres")
 	Global.children_counter = 1
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	first_alive = Characters_node.get_child(0)
@@ -30,8 +33,15 @@ func _process(delta):
 		print ("Cc: ",Global.children_counter)
 		animal_killed = false
 		check_animals_count()
+	if Global.SuperSpeed:
+		Global.time_left = $SuprespeedTimer.time_left
 
-
+func _input(event):
+	if Input.is_action_just_pressed("SuperSpeed") and Global.superspeed_ammo >0:
+		# effecting cars.gd
+		Global.SuperSpeed =  true
+		superspeed_activate()
+		
 
 
 # Being called by CharacterTemplate.gd
@@ -88,3 +98,24 @@ func home():
 
 
 
+func superspeed_activate():
+	BackgroundMusic.pitch_scale =0.8
+	$SuprespeedTimer.start()
+	Global.superspeed_ammo -= 1
+	$WorldEnvironment.environment = load ("res://SuperSpeed_environment.tres")
+	get_tree().call_group("cars","superspeed", true)
+	Global.SuperSpeed_Display.update_display(Global.superspeed_ammo)
+#	update_progressbar()
+
+
+#func update_progressbar():
+	#Global.time_left = $SuprespeedTimer.time_left
+	#var timeout = $SuprespeedTimer.time_left
+	#Global.SuperSpeed_Progressbar.timeout(timeout)
+
+
+func _on_SuprespeedTimer_timeout():
+	Global.SuperSpeed = false
+	BackgroundMusic.pitch_scale =1
+	$WorldEnvironment.environment = load ("res://default_env.tres")
+	get_tree().call_group("cars","superspeed",false)

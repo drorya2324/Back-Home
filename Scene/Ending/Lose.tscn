@@ -38,36 +38,36 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 312.0
-margin_top = 150.0
+margin_top = 144.0
 margin_right = 712.0
-margin_bottom = 450.0
+margin_bottom = 455.0
 rect_min_size = Vector2( 400, 300 )
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 400.0
-margin_bottom = 53.0
+margin_bottom = 39.0
 custom_fonts/font = ExtResource( 1 )
 text = "You Lose"
 align = 1
 valign = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 57.0
+margin_top = 43.0
 margin_right = 400.0
-margin_bottom = 275.0
+margin_bottom = 311.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_left = 100.0
-margin_right = 300.0
-margin_bottom = 218.0
+margin_left = 50.0
+margin_right = 350.0
+margin_bottom = 268.0
 
 [node name="ViewportContainer" type="ViewportContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_right = 200.0
-margin_bottom = 150.0
+margin_right = 300.0
+margin_bottom = 200.0
 rect_min_size = Vector2( 200, 150 )
 
 [node name="Viewport" type="Viewport" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer"]
-size = Vector2( 200, 150 )
+size = Vector2( 300, 200 )
 handle_input_locally = false
 render_target_update_mode = 3
 
@@ -84,9 +84,9 @@ environment = ExtResource( 9 )
 current = true
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 154.0
-margin_right = 200.0
-margin_bottom = 218.0
+margin_top = 204.0
+margin_right = 300.0
+margin_bottom = 268.0
 columns = 2
 
 [node name="TryAgainButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer"]

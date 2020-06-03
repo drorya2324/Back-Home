@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scene/Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/characters/actual_characters_folder/ACow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/Background/grass.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/LevelTemplate.gd" type="Script" id=4]
+[ext_resource path="res://default_env.tres" type="Environment" id=5]
+[ext_resource path="res://Scene/GUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=8]
 
 [node name="LevelTemplate" type="Spatial"]
@@ -47,6 +49,13 @@ one_shot = true
 
 [node name="GameoverTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 5 )
+
+[node name="SuprespeedTimer" type="Timer" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
 [connection signal="timeout" from="CameraBody/CMovementTimer" to="CameraBody" method="_on_CMovementTimer_timeout"]
 [connection signal="timeout" from="GameoverTimer" to="." method="_on_GameoverTimer_timeout"]
 

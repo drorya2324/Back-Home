@@ -15,6 +15,7 @@ var home = false
 
 func _ready():
 	#front_alive = Global.LevelTemplate.Characters_node.get_child(self.get_index()-1).get_child(3).translation.z
+	Global.superspeed_ammo = 3
 	Global.Character = self
 	animations_settings()
 	
@@ -61,6 +62,7 @@ func animate():
 func die(body):
 	if self == body:
 		print("im dead,",self)
+		$DeathAudio.play()
 		body.get_node("DeathTimer").start()
 		body.get_node("CollisionShape").disabled = true
 		body.alive = false
