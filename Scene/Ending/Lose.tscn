@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/ButtonFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Styles/Button_Normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Styles/Button_Hover.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Styles/Button_Pressed.tres" type="StyleBox" id=5]
+[ext_resource path="res://Scene/characters/actual_characters_folder/ACow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/GFX/Models/halo/Golden.material" type="Material" id=7]
+[ext_resource path="res://Assets/GFX/Models/halo/Ring1.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://death_environment.tres" type="Environment" id=9]
+[ext_resource path="res://Scripts/Lose.gd" type="Script" id=10]
+
+[node name="Lose" type="CanvasLayer"]
+script = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 400, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 312.0
+margin_top = 144.0
+margin_right = 712.0
+margin_bottom = 455.0
+rect_min_size = Vector2( 400, 300 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 1 )
+text = "You Lose"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 43.0
+margin_right = 400.0
+margin_bottom = 311.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 50.0
+margin_right = 350.0
+margin_bottom = 268.0
+
+[node name="ViewportContainer" type="ViewportContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 150 )
+
+[node name="Viewport" type="Viewport" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer"]
+size = Vector2( 300, 200 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="ACow" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport" instance=ExtResource( 6 )]
+
+[node name="Halo" type="MeshInstance" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport/ACow"]
+transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -0.648, 0, 1.5, -2.8325e-08, -0.0200043, 5.45431, 4.35496 )
+mesh = ExtResource( 8 )
+material/0 = ExtResource( 7 )
+
+[node name="Camera" type="Camera" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ViewportContainer/Viewport"]
+transform = Transform( 0.766044, 0.0669553, -0.639291, 0, 0.99456, 0.104164, 0.642788, -0.0797942, 0.761877, -3.065, 3.874, 6.561 )
+environment = ExtResource( 9 )
+current = true
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 204.0
+margin_right = 300.0
+margin_bottom = 268.0
+columns = 2
+
+[node name="TryAgainButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 34.0
+margin_right = 189.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Try Again"
+align = 1
+valign = 1
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 34.0
+margin_right = 30.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 30, 30 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 3 )
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 189.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 2 )
+text = "Quit"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GridContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

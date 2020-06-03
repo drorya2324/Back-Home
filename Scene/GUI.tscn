@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Fonts/GUIfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/GFX/Particles/dot_shadow.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/Particles/lighting_blue.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GFX/Particles/dotBlue.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/GUI.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/GUI/SuperSpeedDisplay.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/GUI/TextureProgress.gd" type="Script" id=7]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="CenterContainer" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuperSpeed" type="NinePatchRect" parent="CenterContainer"]
+margin_right = 335.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 335, 120 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VboxContainer" type="VBoxContainer" parent="CenterContainer/SuperSpeed"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 120.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 110, 70 )
+rect_scale = Vector2( 1.5, 1.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/SuperSpeed/VboxContainer"]
+margin_right = 110.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 1 )
+text = "SuperSpeed"
+
+[node name="SuperSpeedDisplay" type="ItemList" parent="CenterContainer/SuperSpeed/VboxContainer"]
+margin_top = 21.0
+margin_right = 110.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 0, 20 )
+items = [ "", ExtResource( 3 ), false, "", ExtResource( 3 ), false, "", ExtResource( 3 ), false ]
+auto_height = true
+max_columns = 3
+fixed_column_width = 23
+icon_mode = 0
+icon_scale = 0.2
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="CenterContainer/SuperSpeed"]
+margin_left = 180.0
+margin_top = 9.5
+margin_right = 190.0
+margin_bottom = 109.5
+rect_min_size = Vector2( 10, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/SuperSpeed"]
+margin_left = 200.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 70, 70 )
+rect_scale = Vector2( 1.5, 1.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/SuperSpeed/VBoxContainer"]
+margin_right = 72.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 1 )
+text = "Timeout"
+
+[node name="SupeSpeedTimeout" type="TextureProgress" parent="CenterContainer/SuperSpeed/VBoxContainer"]
+margin_left = 22.0
+margin_top = 21.0
+margin_right = 72.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 14
+size_flags_vertical = 14
+max_value = 5.0
+step = 0.1
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+fill_mode = 4
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Ring1.obj-f401386fa9ff2c3de7343d5c51c8e5ed.mesh"
+
+[deps]
+
+files=[ "res://.import/Ring1.obj-f401386fa9ff2c3de7343d5c51c8e5ed.mesh" ]
+
+source_file="res://Assets/GFX/Models/halo/Ring1.obj"
+dest_files=[ "res://.import/Ring1.obj-f401386fa9ff2c3de7343d5c51c8e5ed.mesh", "res://.import/Ring1.obj-f401386fa9ff2c3de7343d5c51c8e5ed.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

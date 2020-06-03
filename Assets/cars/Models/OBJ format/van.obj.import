@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/van.obj-20d02839020ef036c4911d8e6983efd0.mesh"
+
+[deps]
+
+files=[ "res://.import/van.obj-20d02839020ef036c4911d8e6983efd0.mesh" ]
+
+source_file="res://Assets/cars/Models/OBJ format/van.obj"
+dest_files=[ "res://.import/van.obj-20d02839020ef036c4911d8e6983efd0.mesh", "res://.import/van.obj-20d02839020ef036c4911d8e6983efd0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
